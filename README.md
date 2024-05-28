@@ -11,7 +11,7 @@ This repository provides a solution for bypassing the GPU limitations in Google 
     - Place the `.ipynb` file of your project in this folder.
     - Share the folder with all the accounts created in the previous step.
 3. **Use Sample Code**:
-    - Utilize the sample code provided in this repository to save and load a checkpoint of your model. This includes the model itself, the optimizer, the scheduler, the number of the last epoch, the minimum model loss, or any other data you require.
+    - Utilize the sample code provided in this repository to save and load checkpoints for your model, including the model itself, the optimizer, the scheduler, min-loss, or any other necessary data.
 4. **Run and Switch Accounts**:
     - Run the code on one of your accounts. When the session ends or you reach the GPU usage limit, switch to another account and run the code again.
     - The model will continue training from the last saved checkpoint.
@@ -30,14 +30,16 @@ The provided code sample demonstrates how to save and load checkpoints for your 
 ### Code Example
 
 ```python
+
+import torch
+from torch.optim.lr_scheduler import ReduceLROnPlateau
 from google.colab import drive
+
 drive.mount('/content/drive')
 
 BEST_MODEL_PATH = '/content/drive/MyDrive/MyModel/model_best.pt'
 DRIVE_CHP_PATH = '/content/drive/MyDrive/MyModel/model_last_checkpoint.pth'
 
-import torch
-from torch.optim.lr_scheduler import ReduceLROnPlateau
 
 class Trainer():
     def __init__(self, config, dataset, checkpoint=None):
@@ -70,13 +72,6 @@ if __name__ == '__main__':
     # Train and evaluate the model
     trainer.train_and_evaluate(50)
 ```
-
-## How to Use
-
-1. **Clone the Repository**: Clone this repository to your local machine or directly into Google Colab.
-2. **Setup Google Drive**: Ensure you have the Google Drive folder set up and shared across all your accounts.
-3. **Run the Code**: Execute the code in Google Colab. When you reach the GPU usage limit, switch to another Google account and run the code again.
-4. **Continue Training**: Your model will continue training from the last saved checkpoint, allowing uninterrupted training across multiple accounts.
 
 ## Contact
 
