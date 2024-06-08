@@ -12,7 +12,7 @@ This repository provides a solution for bypassing the GPU limitations in Google 
     - Share the folder with all the accounts created in the previous step.
 3. **Use Sample Code**:
     - Utilize the sample code provided in this repository to save and load checkpoints for your model, including the model itself, the optimizer, the scheduler, min-loss, or any other necessary data.
-    - Ensure that the path for checkpoints is in your shared folder (from the first step).
+    - Ensure that the path for checkpoints is in your shared folder (from the second step).
 4. **Run and Switch Accounts**:
     - Run the code on one of your accounts. When the session ends or you reach the GPU usage limit, switch to another account and run the code again.
     - The model will continue training from the last saved checkpoint.
