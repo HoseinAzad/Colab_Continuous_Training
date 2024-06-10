@@ -73,29 +73,17 @@ class Trainer():
             'scheduler': scheduler}
         torch.save(checkpoint, save_path)
 
-
     def train_and_evaluate(self, n_epochs):
-
-        loss_list =  []
         for epoch in range(self.epoch, n_epochs):
-
             # ...
-            # ...
-
             train_loss = self.train(self.model, self.train_dataloader, self.optimizer, epoch, self.device)
             test_loss = self.evaluate(self.model, self.test_dataloader, self.device)
-
             # Save the best model based on minimum loss
             if test_loss < self.minloss:
                 self.minloss = test_loss
                 self.save_model(self.model, BEST_MODEL_PATH, epoch)
-
             # ...
-            # ...
-
             self.save_checkpoint(self.model, self.optimizer, self.scheduler, epoch+1, self.minloss, DRIVE_CHP_PATH )
-
-            # ...
             # ...
 
 
