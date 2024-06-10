@@ -26,7 +26,7 @@ The provided code sample demonstrates how to save and load checkpoints for your 
 - Mounting Google Drive
 - Defining paths for saving the best model and checkpoints
 - Loading checkpoints
-- Training and evaluating the model
+- Training and evaluating the model and saving the checkpoints
 
 ### Code Example
 
